@@ -48,7 +48,7 @@ var handlePageChange = function() {
 
 var addDebouncedEventListener = function(obj, eventType, listener, delay) {
     var timer;
-    
+
     obj.addEventListener(eventType, function(evt) {
             if (timer) {
                 window.clearTimeout(timer);
@@ -84,7 +84,7 @@ var replaceTicketNumbersWithLinks = function(projectKeys, jiraServer, newWindow,
 };
 
 var getRegex = function (projectKeys) {
-  return new RegExp("(browse/)?((" + projectKeys.join('|') + ")-\\d+)","g");
+  return new RegExp("(browse/)?((" + projectKeys.join('|') + ")-\\d+):?","g");
 };
 
 var getMatches = function(parent, regex, callback, ignore) {

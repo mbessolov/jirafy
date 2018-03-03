@@ -84,7 +84,7 @@
 
       test('Simple anchor insertion', function() {
         var node = id('simple-insertion');
-        equal(node.innerHTML, 'FOO-4', 'Ticket without link');
+        equal(node.innerHTML, 'FOO-4:', 'Ticket without link');
 
         replaceTicketNumbersWithLinks(['FOO'], 'http://example.com', 'false', [], node)
 
@@ -93,7 +93,7 @@
 
       test('Simple anchor insertion open in new window', function() {
         var node = id('simple-insertion');
-        equal(node.innerHTML, 'FOO-4', 'Ticket without link');
+        equal(node.innerHTML, 'FOO-4:', 'Ticket without link');
 
         replaceTicketNumbersWithLinks(['FOO'], 'http://example.com', 'true', [], node)
 
@@ -102,10 +102,10 @@
 
       test('Multiple anchor insertion', function() {
         var node = id('multiple-insertion');
-        equal(node.innerHTML, 'Beer me FOO-23 and BAR-42 issues.', 'Tickets without links');
+        equal(node.innerHTML, 'Beer me FOO-23: Something and BAR-42: Something else issues.', 'Tickets without links');
         replaceTicketNumbersWithLinks(['FOO', ['BAR']], 'http://example.com', 'false', [], node)
 
-        equal(node.innerHTML, 'Beer me <a href=\"http://example.com/browse/FOO-23\">FOO-23</a> and <a href=\"http://example.com/browse/BAR-42\">BAR-42</a> issues.');
+        equal(node.innerHTML, 'Beer me <a href=\"http://example.com/browse/FOO-23\">FOO-23:</a> and <a href=\"http://example.com/browse/BAR-42\">BAR-42:</a> issues.');
       });
 
       test('Match only given projects', function() {
@@ -132,7 +132,7 @@
           zGlb_jiraServer = 'http://example.com';
           zGlb_targetWindow = 'false';
 
-          equal(node.innerHTML, 'FOO-18', 'Ticket without link');
+          equal(node.innerHTML, 'FOO-18:', 'Ticket without link');
           handlePageChange();
           equal(node.innerHTML, '<a href="http://example.com/browse/FOO-18">FOO-18</a>');
 
